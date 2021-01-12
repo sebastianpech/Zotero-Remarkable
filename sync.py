@@ -7,13 +7,14 @@ parser = argparse.ArgumentParser(description='Synchronize reMarkable and Zotero 
 parser.add_argument('Zotero', help="Basefolder defined in ZotFile tablet settings.")
 parser.add_argument('reMarkable', help="Mirrored folder on reMarkable.")
 parser.add_argument('--delete', action='store_true', help="Delete all files on reMarkable that don't exists in the Zotero folder.")
+parser.add_argument('--rmapi', default="rmapi", help="rmapi executable. This can be a path or the name of the rmapi executable that is in PATH. Default is rmapi")
 
 args = parser.parse_args()
 
 ZOTERO_FOLDER = args.Zotero
 RM_FOLDER =  args.reMarkable
 
-RMAPI_BIN = os.path.join(os.path.dirname(os.path.abspath(__file__)),"bin","rmapi")
+RMAPI_BIN = args.rmapi
 
 def rmapi(cmd):
     return subprocess.check_output(f"{RMAPI_BIN} {cmd}", shell=True, stderr=subprocess.STDOUT).decode("utf-8").split('\n')[0:-1]
