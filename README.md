@@ -15,8 +15,8 @@ The following changes are synchronized:
 
 ## Help
 
-```sh
-usage: sync.py [-h] [--delete] [--rmapi RMAPI] Zotero reMarkable
+```
+usage: sync.py [-h] [--delete] [--download] [--rmapi RMAPI] Zotero reMarkable
 
 Synchronize reMarkable and Zotero tablet export.
 
@@ -26,8 +26,7 @@ positional arguments:
 
 optional arguments:
   -h, --help     show this help message and exit
-  --delete       Delete all files on reMarkable that don't exists in the
-                 Zotero folder.
-  --rmapi RMAPI  rmapi executable. This can be a path or the name of the rmapi
-                 executable that is in PATH. Default is rmapi
+  --delete       Delete all files on reMarkable that don't exists in the Zotero folder.
+  --download     Download all files from reMarkable, even if they are not in the Zotero folder. (Overwrites --delete)
+  --rmapi RMAPI  rmapi executable. This can be a path or the name of the rmapi executable that is in PATH. Default is rmapi
 ```
