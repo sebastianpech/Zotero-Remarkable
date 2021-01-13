@@ -44,12 +44,12 @@ def delete_file(file):
 
 def get_files():
     files_on_remarkable = set([f.split('\t')[-1] for f in rmapi(f"ls {RM_FOLDER}")])
-    files_on_local = set([os.path.splitext(os.path.basename(f))[0] for f in os.listdir(ZOTERO_FOLDER)])
+    files_on_local = set([os.path.splitext(os.path.basename(f))[0] for f in os.listdir(ZOTERO_FOLDER) if f.endswith(".pdf")])
     return files_on_remarkable, files_on_local
 
 def process_files(delete=False, download=False):
     files_on_remarkable, files_on_local = get_files()
-    files_to_download = files_on_remarkable
+    files_to_download = files_on_remarkable.copy()
 
     if not download:
         files_to_download &= files_on_local
