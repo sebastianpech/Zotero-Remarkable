@@ -6,7 +6,7 @@ stdenv.mkDerivation {
   unpackPhase = "true";
   installPhase = ''
     mkdir -p $out/bin
-    cp ${./sync.py} $out/bin/sync.py
-    chmod +x $out/bin/sync.py
+    cp ${./sync.py} $out/bin/zotero-remarkable
+    chmod +x $out/bin/zotero-remarkable
     '';
 }
