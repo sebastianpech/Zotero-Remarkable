@@ -1,5 +1,5 @@
 # Zotero to reMarkable Cloud
-
+# Note: Since this project is relatively dependent on the [rmapi](https://github.com/juruen/rmapi) app, it's highly recommended to visit the said repository first.
 This script can be used with the `Send to Tablet` function from [ZotFile](http://zotfile.com/).
 It synchronizes the ZotFile basis folder with a folder in the reMarkable cloud.
 
